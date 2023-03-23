@@ -1,15 +1,20 @@
-import React, { useState } from 'react'
+import React, { createContext, useState } from 'react'
 import './App.css'
-const App = () => {
-  const [count, setCount] = useState(0)
-  console.warn(count)
+import ContextApi from './ContextApi'
+
+export const ExampleHooks = createContext();
+function App() {
+  const [color, setColor] = useState('red')
   return (
+    <ExampleHooks.Provider value={{appColor:color}}>
     <div className='App'>
-      <h2>Use State {count} </h2>
-      <button onClick={()=>setCount(count-1)}>Updating Data</button>
-    </div>
+      <h1>
+       App Component
+      </h1>
+      <ContextApi />
+      </div>
+      </ExampleHooks.Provider>
   )
-    
 }
 
 export default App
