@@ -1,29 +1,12 @@
-import React from 'react'
-import Navbar from './Navbar'
-import About from './Pages/About'
-import Pricing from './Pages/Pricing'
+import React from "react";
+import "./App.css";
+import ValidationInReact from "./ValidationInReact";
 
-const App = () => {
-  let Component 
-  switch (window.location.pathname) {
-    case "/":
-      Component = <App />
-        break 
-    case "/about":
-      Component = <About />
-      break
-    case "/pricing":
-      Component = <Pricing />
-      break
-      default:
-
-}
+export default function App() {
   return (
-   <>
-      <Navbar />
-      {Component} 
-    </>
-  )
+    <div className="App">
+      <h1>Reactjs validation</h1>
+      <ValidationInReact />
+    </div>
+  );
 }
-
-export default App
